@@ -9,15 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/jsp13")
-public class jsp13 extends HttpServlet {
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
+
+@WebServlet("/jsp14")
+public class jsp14 extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		resp.setCharacterEncoding("UTF-8"); //UTF-8로 보내겠다
+		resp.setContentType("Text/html; charset=UTF-8"); //UTF-8로 받아라
 		
 		PrintWriter out = resp.getWriter();
 		
 		for(int i=0; i<100; i++) {
-		out.println((i+1)+": hello servlet<br/>");
+		out.println((i+1)+": 안녕 servlet<br/>");
 		
 		}
 	}
