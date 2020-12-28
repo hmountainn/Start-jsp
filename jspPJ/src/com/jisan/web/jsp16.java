@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
 
-@WebServlet("/jsp15")
-public class jsp15 extends HttpServlet {
+@WebServlet("/jsp16")
+public class jsp16 extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -21,7 +21,12 @@ public class jsp15 extends HttpServlet {
 		
 		PrintWriter out = resp.getWriter();
 		
-		int cnt = Integer.parseInt(req.getParameter("cnt")); //cnt값을 사용자에게 받자
+		String cnt_ = req.getParameter("cnt"); //cnt값 쿼리스트링 이용해서 사용자에게 받자
+		
+		int cnt = 10; //기본값
+		if(cnt_ !=null && !cnt_.equals("")) {  //쿼리스트링으로 입력받으면 그값으로 하자
+			cnt = Integer.parseInt(cnt_);
+		}
 		
 		for(int i=0; i<cnt; i++) {
 		out.println((i+1)+": 안녕 servlet<br/>");
