@@ -17,7 +17,7 @@ public class jsp13 extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		
 		for(int i=0; i<100; i++) {
-		out.println((i+1)+": hello servlet");
+		out.println((i+1)+": hello servlet<br/>");
 		
 		}
 	}
