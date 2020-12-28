@@ -9,15 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
-
 @WebServlet("/notice")
-public class jsp18 extends HttpServlet {
+public class jsp19 extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		resp.setCharacterEncoding("UTF-8"); //UTF-8로 보내겠다
 		resp.setContentType("Text/html; charset=UTF-8"); //UTF-8로 받아라
+		req.setCharacterEncoding("UTF-8"); //서버에서 입력받은거 UTF-8로 하겠다
 		
 		PrintWriter out = resp.getWriter();
 		
