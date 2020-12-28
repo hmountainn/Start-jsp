@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
 
-@WebServlet("/jsp16")
-public class jsp16 extends HttpServlet {
+@WebServlet("/notice")
+public class jsp18 extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -21,16 +21,12 @@ public class jsp16 extends HttpServlet {
 		
 		PrintWriter out = resp.getWriter();
 		
-		String cnt_ = req.getParameter("cnt"); //cnt값 쿼리스트링 이용해서 사용자에게 받자
+		String title = req.getParameter("title");  //이름이 title에서 받기
+		String content = req.getParameter("content"); //이름이 content에서 받기
 		
-		int cnt = 10; //기본값
-		if(cnt_ !=null && !cnt_.equals("")) {  //쿼리스트링으로 입력받으면 그값으로 하자
-			cnt = Integer.parseInt(cnt_);
-		}
+		out.println(title);
+		out.println(content);
 		
-		for(int i=0; i<cnt; i++) {
-		out.println((i+1)+": 안녕 servlet<br/>");
 		
-		}
 	}
 }
