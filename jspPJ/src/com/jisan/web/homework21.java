@@ -16,12 +16,22 @@ public class homework21 extends HttpServlet {
 		
 		resp.setCharacterEncoding("UTF-8"); // UTF-8로 응답보낼게
 		resp.setContentType("Text/html; charset=UTF-8"); //UTF-8로 받아라
+		PrintWriter out = resp.getWriter();
 		
 		int x = Integer.parseInt(req.getParameter("x")); //x값 받기
 		int y = Integer.parseInt(req.getParameter("y")); //y값 받기
-		int sum = x+y;
+		String bt = req.getParameter("bt");
 		
-		PrintWriter out = resp.getWriter();
-		out.println("합은 "+sum);
+		if(bt.equals("덧셈")) {
+			int sum = x+y;
+			out.println("합은 "+sum);
+		}
+		else {
+			int minus = x-y;
+			out.println("차는 "+minus);
+		}
+		}
+	
+		
 	}
-}
+
