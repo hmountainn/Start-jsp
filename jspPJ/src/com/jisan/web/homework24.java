@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/homework")
-public class homework21 extends HttpServlet {
+@WebServlet("/homework24")
+public class homework24 extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -18,18 +18,16 @@ public class homework21 extends HttpServlet {
 		resp.setContentType("Text/html; charset=UTF-8"); //UTF-8로 받아라
 		PrintWriter out = resp.getWriter();
 		
-		int x = Integer.parseInt(req.getParameter("x")); //x값 받기
-		int y = Integer.parseInt(req.getParameter("y")); //y값 받기
-		String bt = req.getParameter("bt");
+		String[] num_ = req.getParameterValues("num"); //값여러개 배열로 받기
+		int result = 0;
 		
-		if(bt.equals("덧셈")) {
-			int sum = x+y;
-			out.println("합은 "+sum);
+		for(int i=0; i<num_.length; i++) {
+			int num = Integer.parseInt(num_[i]);
+			result = result+num;
 		}
-		else {
-			int minus = x-y;
-			out.println("차는 "+minus);
-		}
+		
+		out.print("총합은: "+result);
+		
 		}
 	
 		
