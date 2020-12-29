@@ -33,8 +33,20 @@
 	<url-pattern>/hello</url-pattern>
 
   </servlet-mapping> -->
-
-
+  
+  
+  <!-- 필터 사용설정 -->
+  <filter>
+  	<filter-name>encoding</filter-name>
+  	<filter-class>com.jisan.web.filter.CharacterEncodingFliter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>encoding</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
 
   <display-name>Welcome to Tomcat</display-name>
   <description>

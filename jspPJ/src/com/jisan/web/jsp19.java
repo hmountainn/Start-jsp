@@ -16,7 +16,7 @@ public class jsp19 extends HttpServlet {
 		
 		resp.setCharacterEncoding("UTF-8"); //UTF-8로 보내겠다
 		resp.setContentType("Text/html; charset=UTF-8"); //UTF-8로 받아라
-		req.setCharacterEncoding("UTF-8"); //서버에서 입력받은거 UTF-8로 하겠다
+		//req.setCharacterEncoding("UTF-8"); // 필터에서 설정하려고 주석처리
 		
 		PrintWriter out = resp.getWriter();
 		
